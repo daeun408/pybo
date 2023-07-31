@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Hello~ FirstSite</h2>
+<a>일기 작성하기 -> </a>
+<a href="{% url 'pybo:diary' %}">diary</a><br><br>
+<a>할일 작성하기 -> </a>
+<a href="{% url 'pybo:todolist' %}">todolist</a>
+{% endblock %}

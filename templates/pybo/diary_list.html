@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>일기 작성하기</h3>
+<button type="button" onclick="location.href='create/'">작성하기</button>
+<h3>일기 목록</h3>
+{% if diary_list %}
+    <ul>
+        {% for diary in diary_list %}
+            <li><a href="{% url 'pybo:diary_detail' diary.id %}">{{ diary.subject }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>작성된 일기가 없습니다.</p>
+{% endif %}
+{% endblock %}

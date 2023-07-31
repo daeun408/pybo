@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>diary id : {{ diary.id }}</h4>
+<h2>일기 제목 : {{ diary.subject }}</h2>
+<h3>작성 날짜 : {{diary.create_date }}</h3>
+<div>
+    <br>
+    {{ diary.content }}
+    <br>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>할일 작성하기</h3>
+<button type="button" onclick="location.href='{% url 'pybo:todolsit_create' %}'">작성하기</button>
+<h3>할일 목록</h3>
+{% if todolist %}
+    <ul>
+        {% for todo in todolist %}
+            <li><a>{{ todo.todo }} {{ todo.end_date }} {{ todo.done }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>작성된 할일 없습니다.</p>
+{% endif %}
+{% endblock %}

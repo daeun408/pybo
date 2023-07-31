@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+
+</head>
+<body>
+  <hr>
+  <h4 style="display:inline">pybo</h4>
+  {% if user.is_authenticated %}
+  <a href="{% url 'common:logout' %}">
+    {{ user.username }} (로그아웃)
+  </a>
+  {%else%}
+  <a href="{% url 'common:login' %}">로그인</a>
+  {%endif%}
+  <a href="{% url 'pybo:index' %}">pybo-home</a>
+  <a href="{% url 'pybo:diary' %}">diary</a>
+  <a href="{% url 'pybo:todolist' %}">todolist</a>
+  <hr>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
